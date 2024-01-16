@@ -1,0 +1,30 @@
+.principal{   
+   width: 800px;
+   margin: 300px;
+   text-align: center;  
+}
+
+.principal p{    
+    color: blanchedalmond;
+    font-size: 2em;
+    text-shadow: 2px 2px 12px #001F3F;
+} 
+
+.principal h1{
+    color: blanchedalmond;
+    text-shadow: 2px 2px 12px #001F3F;
+}
+
+.ingresar{
+    background-color: blanchedalmond;
+    width: 100px;
+    border: 2px solid #001F3F;
+    border-radius: 7px ;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.ingresar:hover{
+  background-color: burlywood;
+  border: 2px solid #001F3F;
+}

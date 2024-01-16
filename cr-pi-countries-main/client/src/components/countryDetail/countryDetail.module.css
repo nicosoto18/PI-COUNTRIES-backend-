@@ -1,0 +1,75 @@
+.contenedor{
+    width: 100%;
+    height: 100%;
+    /* background-color:aqua ;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btBack{
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: flex-start;
+   margin-top: 5px;
+   margin-left: 5px;
+}
+
+.card{
+   /* background-color: brown; */
+    width: 70%;
+    height: 100%;
+    display: flex;
+    margin-top: 2em;
+}
+
+.titulo{
+    background-color:   rgb(197, 197, 235, 0.5);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-bottom: 0.4em solid #001F3F;
+
+}
+.Actividades{
+    background-color: rgb(197, 197, 235, 0.5); 
+    width: 85%;
+    height: auto;
+    border: 0.4em solid #001F3F;
+    margin-bottom: 1em;
+    border-radius: 2em;
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;  
+}
+
+.actividad{
+    background-color:#FFFFFF70;
+    border: 0.2em solid #001F3F ;
+    color: #001F3F;
+    width: 20%;
+    height: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.actividad h2{
+    border-bottom: 0.1em solid #001F3F ;
+    height: 15%;
+    margin-top: 2%;  
+}
+
+.mostrarActivid{
+margin: 2em;    
+}
+
+
+
+
+
+
+

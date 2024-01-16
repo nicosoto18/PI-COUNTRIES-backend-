@@ -1,0 +1,94 @@
+
+.navegacion{
+    background-color:rgb(197, 197, 235, 0.5); /* Gris con un alfa de 0.5 */
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;  /*esto me arregla el espacio vacio del top */
+    position: fixed;
+    border: 0.1em solid white;
+
+}
+
+button, select{
+    margin: 10px;
+    padding: 10px;
+    background-color: #a9bcd0;
+    color: black;
+    border-radius: 5px;
+    border: 2.5px solid #001F3F;
+    cursor: pointer;
+}
+
+button:hover{
+    border: 2.5px solid cadetblue;
+}
+
+select:hover{
+    border: 2.5px solid cadetblue;
+}
+
+.lasCard{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cardIndividual{
+
+    background-color: rgb(197, 197, 235, 0.5);
+    width: 20em;
+    height: 25em;
+    margin: 2em;
+    text-align: center;
+    color: black;
+    border: 0.3em solid #001F3F;
+    border-radius: 1em;
+}
+.cardIndividual img{
+    width: 100%;
+    height: 13em;
+}
+
+.cardIndividual:hover{
+    border:0.3em solid cadetblue;
+}
+
+.Linkk{
+    color:black
+}
+
+.btPaginado{
+    display: flex;
+    font-size: 17px;
+    height: 30px;
+    align-items: center;
+    padding-top: 0;
+    border: 2px solid #001F3F;
+    border-radius: 50px;
+}
+
+.contenedorPaginado{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    /* margin-bottom: 30px; */   
+    margin-top: 5em;
+}
+
+.contenedorPaginado span{
+    align-items: center;
+    background-color: #a9bcd0;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 20px;
+    border: 2px solid #001F3F;
+    border-radius: 50px;
+}
+
