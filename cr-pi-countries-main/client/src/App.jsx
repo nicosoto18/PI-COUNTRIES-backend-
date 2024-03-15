@@ -1,10 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 //COMPONENTS
-import Bienvenida from "./components/bienvenida/Bienvenida";
-import Home from "./components/home/Home";
-import CountryDetail from "./components/countryDetail/countryDetail";
-import Form from "./components/form/Form";
+import Bienvenida from "./Components/bienvenida/Bienvenida";
+import Home from "./Components/home/Home";
+import CountryDetail from "./Components/CountryDetail/CountryDetail.jsx";
+import Form from "./Components/form/Form";
 
 function App() {
   return (

@@ -2,8 +2,8 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const CountryModel = require("./models/Country");
 const ActivityModel = require("./models/Activity");
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs'); //funciones para trabajar con el sistema de archivos
+const path = require('path'); //utilidades para manejar y transformar rutas de archivos
 const {DB_USER, DB_PASSWORD, DB_HOST} = process.env;
 
 

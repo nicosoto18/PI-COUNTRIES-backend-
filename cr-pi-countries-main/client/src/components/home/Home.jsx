@@ -67,20 +67,18 @@ const Home = () => {
     return Math.ceil(filterCountriesData.length/ITEMS_PER_PAGE ) //funcion para calcular el nro total de paginas
   }
 
-  const startIndex = (currentPage-1) * ITEMS_PER_PAGE; //calcula indice de inicio
-  const endIndex = startIndex + ITEMS_PER_PAGE         //calcula fin de los paises a mostrar en la pag
+  const startIndex = (currentPage-1) * ITEMS_PER_PAGE; //calcula indice de inicio 
+  const endIndex = startIndex + ITEMS_PER_PAGE         //calcula fin de los paises a mostrar en la pag 
 
   const displayedCountries = filterCountriesData.slice(startIndex,endIndex) //traeme los paises segun la pagina actual
 
   const totalPages = calculateTotalPages(); //nro total de paginas
 
-  // setCurrentPage(1) => le agregue esto a la funcion handleFilter 
-  // setCurrentPage(1); => le agregue esto a la funcion handleOrder para que se reinice la pagina al cambiar el orden
- 
+
 
   return (
     <div className={style.Home}>
-      <div className={style.navegacion}>
+     <div className={style.navegacion}>
         <Link to="/">
           <button>Volver</button>
         </Link>
@@ -108,7 +106,7 @@ const Home = () => {
 
         <select name="filterActividad" onChange={handleChangeActivity}>
           <option value="" disabled>Actividades</option>  
-          <option value="todas">Todas</option>
+          <option value="todas">Todas las actividades</option>
           {AllActivities.length>0?AllActivities.map((activity) => (
             <option value={activity.Id}>{activity.Nombre}</option>
           ))
@@ -123,8 +121,10 @@ const Home = () => {
         <SearchBar/>
       
       </div>
-        
-          <div className={style.contenedorPaginado}>     
+      <div className={style.contenedorHome}>
+
+          <div className={style.contenedorPaginado}>    
+          <div className={style.contenedorButtons}>
        <button onClick={()=>handlePageChange(currentPage-1)} disabled={currentPage===1} className={style.btPaginado}>
        👈
         </button>
@@ -132,22 +132,28 @@ const Home = () => {
        <button onClick={()=>handlePageChange(currentPage+1)} disabled={currentPage===totalPages} className={style.btPaginado}>
         👉
         </button>
+            </div> 
         </div>
         
         <div className={style.lasCard} >
       {displayedCountries.map((country) => (
-         <div className={style.cardIndividual}>
+        <div className={style.cardIndividual}>
+          <div className={style.contenedorTituloCard}>
           <h2>{<Link className={style.Linkk} 
-                to={`/Detail/${country.Id}`}>{country.Nombre}</Link>}</h2>
+              to={`/Detail/${country.Id}`}>{country.Nombre}</Link>}
+          </h2>
+          </div>
           <h3>{country.Continente}</h3>
           <img src={country.Imagen} alt="img"/>
         </div>
        ))}
                 
    </div>
+       </div>
       
     </div>
   );
 };
 
 export default Home;
+

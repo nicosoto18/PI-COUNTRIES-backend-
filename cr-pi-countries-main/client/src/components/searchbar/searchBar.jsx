@@ -1,6 +1,6 @@
 import style from "./searchBar.module.css"
 import { useState } from "react";
-import Card from "../card/Card";
+import Card from "../Card/Card";
 import { useDispatch } from "react-redux";
 import { countryName } from "../redux/actions";
 import { useSelector } from "react-redux";

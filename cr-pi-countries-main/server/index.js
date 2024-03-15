@@ -1,7 +1,6 @@
-const axios = require("axios");
 const { conn } = require('./src/db.js');
 const PORT = 3001;
-//
+
 const express = require("express");
 const router = require("./src/routes");
 const morgan = require("morgan");
@@ -26,7 +25,7 @@ server.use((req, res, next) => {
 server.use(express.json());  
 server.use(morgan("dev"));
 server.use(cors());
-server.use("",router); //todo lo que sea barra countries barra algo ira a buscarlo al index de routes
+server.use("",router); //todo lo que sea barra algo ira a buscarlo al index de routes
 
 module.exports = server;
 

@@ -8,6 +8,7 @@ const allCountries = () => {
     try {
       const endpoint = "http://localhost:3001/countries";
       const { data } = await axios.get(endpoint);
+      console.log("mi data es", data)
 
       dispatch({
         type: ALLCOUNTRIES,
@@ -53,11 +54,8 @@ const countryDetail = (id) => {
 const createActivity = (activity) => {
   return async (dispatch) => {
     try {
-      console.log("recibida desde createactivity")
-      console.log("recibi esto", activity)
-      const endpoint = "http://localhost:3001/activities";
+     const endpoint = "http://localhost:3001/activities";
      const {data}=await axios.post(endpoint, activity);
-     console.log(data)
       alert("La actividad se creo correctamente");
     } catch (error) {
       console.log(error);

@@ -14,5 +14,4 @@ router.get("/activities", getActivities);
 router.post("/activities", createActivities);
 
 
-
 module.exports = router;
