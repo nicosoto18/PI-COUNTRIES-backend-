@@ -55,7 +55,7 @@ const createActivity = (activity) => {
   return async (dispatch) => {
     try {
      const endpoint = "http://localhost:3001/activities";
-     const {data}=await axios.post(endpoint, activity);
+     const {data} = await axios.post(endpoint, activity);
       alert("La actividad se creo correctamente");
     } catch (error) {
       console.log(error);

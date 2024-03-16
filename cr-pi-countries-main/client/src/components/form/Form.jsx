@@ -4,9 +4,14 @@ import {createActivity } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import Validation from "../validation/validation";
 import axios from "axios";
+import { useEffect } from "react";
 
 const Form = () => {
   const dispatch = useDispatch();
+  
+  // useEffect(()=>{
+   
+  // },[handleSubmit])
 
   const [initialActivity, setInitialActivity] = useState({
     Nombre: "",
@@ -57,6 +62,9 @@ const Form = () => {
     } else {
       console.log("llamando a la action createActivity")
       dispatch (createActivity(Activity));
+      console.log(initialActivity)
+       setActivity(initialActivity)
+       setpaisABuscar("")
     }
   };
 
@@ -111,25 +119,25 @@ const Form = () => {
       
         <div className={style.nombre}>
           <label htmlFor="nombre">Nombre </label>
-          <input type="text" id="nombre" onChange={handleChange} name="Nombre" placeholder="Ingrese un nombre"/>
+          <input type="text" id="nombre" onChange={handleChange} name="Nombre" placeholder="Ingrese un nombre" value={Activity.Nombre}/>
           {errors.n1 ? <p>{errors.n1}</p> : null}         
         </div>  
           
         <div className={style.dificultad}>
           <label htmlFor="dificultad"> Dificultad: </label>
-          <input type="text" id="dificultad" onChange={handleChange} name="Dificultad" placeholder="Ingrese un numero entre 1 y 5"/>       
+          <input type="text" id="dificultad" onChange={handleChange} name="Dificultad" placeholder="Ingrese un numero entre 1 y 5" value={Activity.Dificultad}/>       
           {errors.d1 ? <p>{errors.d1}</p> : null}
           {errors.d2 ? <p>{errors.d2}</p> : null}
         </div>
 
         <div className={style.duracion}>
           <label htmlFor="duracion"> Duracion(en minuntos): </label>
-          <input  type="text" id="duracion" onChange={handleChange} name="Duracion"  placeholder="120"/>
+          <input  type="text" id="duracion" onChange={handleChange} name="Duracion"  placeholder="120" value={Activity.Duracion}/>
         </div>  
            
         <div className={style.temporada}>
           <label htmlFor="temporada"> Temporada: </label>
-           <select name="Temporada" id="temporada" onChange={handleChange} >{/*value={Activity.Temporada}  */}
+           <select name="Temporada" id="temporada" onChange={handleChange} value={Activity.Temporada} >
             <option value="verano">Verano</option>
             <option value="invierno">Invierno</option>
             <option value="otoño">Otoño</option>
@@ -139,7 +147,7 @@ const Form = () => {
 
         <div className={style.paises}>
           <label htmlFor="paises"> Pais: </label>
-          <input type="text" id="paises"onChange={handleChange} name="Paises" placeholder="nombre de pais"  />
+          <input type="text" id="paises"onChange={handleChange} name="Paises" placeholder="nombre de pais" value={paisABuscar} />
         </div>   
            
         <div className={style.botones}> 
@@ -157,7 +165,7 @@ const Form = () => {
 
         <div className={style.lista}>
           <ul>
-            {Activity.Paises.map((pais) => {
+            {Activity.Paises?.map((pais) => {
               return (
                 <li
                   key={pais}

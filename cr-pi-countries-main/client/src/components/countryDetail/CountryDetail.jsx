@@ -6,11 +6,11 @@ import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 
 const CountryDetail = () => {
+  const { id } = useParams();
   const detail = useSelector((state) => state.countryDetail);
   const dispatch = useDispatch();
-  const { id } = useParams();
 
-  const hayActividad = detail.Activities.length;
+  const hayActividad = detail.Activities?.length;
   console.log("SI HAY ACTIVIDAD ENTONCES", hayActividad);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const CountryDetail = () => {
       {hayActividad ? (
         <div className={style.Actividades}>
           <div className={style.titulo}>
-            <h2>Actividades</h2>
+            <h2>Actividades destacadas en este país</h2>
           </div>
           {detail.Activities.map((activity) => (
             <div className={style.actividad}>
