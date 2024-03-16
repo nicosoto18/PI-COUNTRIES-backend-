@@ -15,8 +15,8 @@ const Form = () => {
 
   const [initialActivity, setInitialActivity] = useState({
     Nombre: "",
-    Dificultad: null ,
-    Duracion: null,
+    Dificultad: "" ,
+    Duracion: "",
     Temporada: "Verano",
     Paises: [],
   });
