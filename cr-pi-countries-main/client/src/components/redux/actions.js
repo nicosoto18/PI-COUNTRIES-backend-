@@ -2,11 +2,10 @@ import { ALLCOUNTRIES,COUNTRYNAME,COUNTRYDETAIL,FILTERCARDS,ALLACTIVITIES,FILTER
         from "./actiontypes";
 import axios from "axios"; 
 
-
 const allCountries = () => {
   return async (dispatch) => {
     try {
-      const endpoint = "http://localhost:3001/countries";
+      const endpoint = "/countries";
       const { data } = await axios.get(endpoint);
       console.log("mi data es", data)
 
@@ -23,7 +22,7 @@ const allCountries = () => {
 const countryName = (country) => {
   return async (dispatch) => {
     try {
-      const endpoint = `http://localhost:3001/countriesByName?name=${country}`;
+      const endpoint = `/countriesByName?name=${country}`;
       const { data } = await axios.get(endpoint);
       dispatch({
         type: COUNTRYNAME,
@@ -39,7 +38,7 @@ const countryName = (country) => {
 const countryDetail = (id) => {
   return async (dispatch) => {
     try {
-      const endpoint = `http://localhost:3001/countries/${id}`;
+      const endpoint = `/countries/${id}`;
       const { data } = await axios.get(endpoint);
       dispatch({
         type: COUNTRYDETAIL,
@@ -54,7 +53,7 @@ const countryDetail = (id) => {
 const createActivity = (activity) => {
   return async (dispatch) => {
     try {
-     const endpoint = "http://localhost:3001/activities";
+     const endpoint = "/activities";
      const {data} = await axios.post(endpoint, activity);
       alert("La actividad se creo correctamente");
     } catch (error) {
@@ -73,7 +72,7 @@ const filterCards = (value) => {
 const allActivities = () => {
   return async (dispatch) => {
     try {
-      const endpoint = "http://localhost:3001/activities";
+      const endpoint = "/activities";
       const { data } = await axios.get(endpoint);
       dispatch({
         type: ALLACTIVITIES,
