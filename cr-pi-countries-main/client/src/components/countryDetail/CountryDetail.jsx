@@ -11,10 +11,8 @@ const CountryDetail = () => {
   const dispatch = useDispatch();
 
   const hayActividad = detail.Activities?.length;
-  console.log("SI HAY ACTIVIDAD ENTONCES", hayActividad);
 
   useEffect(() => {
-    console.log("EL ID RECIBIDO POR PARAMETRO ES", id);
     dispatch(countryDetail(id));
   }, [id]);
 
@@ -43,8 +41,9 @@ const CountryDetail = () => {
           <div className={style.titulo}>
             <h2>Actividades destacadas en este país</h2>
           </div>
-          {detail.Activities.map((activity) => (
-            <div className={style.actividad}>
+          {detail.Activities.map((activity,index) => (
+            
+            <div className={style.actividad} key={index}>
               <h2>{activity.Nombre}</h2>
               <h3>Temporada: {activity.Temporada}</h3>
               <h3>Duracion: {activity.Duracion} minutos</h3>
@@ -52,7 +51,7 @@ const CountryDetail = () => {
             </div>
           ))}
         </div>
-      ) : null}
+      )  : null}
     </div>
   );
 };

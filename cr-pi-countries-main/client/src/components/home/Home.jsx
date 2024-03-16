@@ -107,8 +107,8 @@ const Home = () => {
         <select name="filterActividad" onChange={handleChangeActivity}>
           <option value="" disabled>Actividades</option>  
           <option value="todas">Todas las actividades</option>
-          {AllActivities.length>0?AllActivities.map((activity) => (
-            <option value={activity.Id}>{activity.Nombre}</option>
+          {AllActivities.length>0?AllActivities.map((activity,index) => (
+            <option value={activity.Id} key={index}>{activity.Nombre}</option>
           ))
          :null
         }
@@ -136,8 +136,8 @@ const Home = () => {
         </div>
         
         <div className={style.lasCard} >
-      {displayedCountries.map((country) => (
-        <div className={style.cardIndividual}>
+      {displayedCountries.map((country,index) => (
+        <div className={style.cardIndividual} key={index}>
           <div className={style.contenedorTituloCard}>
           <h2>{<Link className={style.Linkk} 
               to={`/Detail/${country.Id}`}>{country.Nombre}</Link>}

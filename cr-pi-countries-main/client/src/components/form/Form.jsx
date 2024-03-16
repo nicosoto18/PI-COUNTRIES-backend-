@@ -15,8 +15,8 @@ const Form = () => {
 
   const [initialActivity, setInitialActivity] = useState({
     Nombre: "",
-    Dificultad: 0,
-    Duracion: 0,
+    Dificultad: null ,
+    Duracion: null,
     Temporada: "Verano",
     Paises: [],
   });
@@ -137,7 +137,7 @@ const Form = () => {
            
         <div className={style.temporada}>
           <label htmlFor="temporada"> Temporada: </label>
-           <select name="Temporada" id="temporada" onChange={handleChange} value={Activity.Temporada} >
+           <select name="Temporada" id="temporada" onChange={handleChange} value={Activity.Temporada} className={style.ValorTemporada}>
             <option value="verano">Verano</option>
             <option value="invierno">Invierno</option>
             <option value="otoño">Otoño</option>
