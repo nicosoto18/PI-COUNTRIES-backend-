@@ -3,6 +3,8 @@ const { conn } = require('./src/db.js');
 require('dotenv').config()
 const {PORT} = process.env 
 //
+
+console.log(PORT)
 const express = require("express");
 const router = require("./src/routes");
 const morgan = require("morgan");
