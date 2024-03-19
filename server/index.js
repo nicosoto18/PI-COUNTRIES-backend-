@@ -1,10 +1,9 @@
 const { conn } = require('./src/db.js');
 //
 require('dotenv').config()
-const {PORT} = process.env 
+const port = process.env.PORT | 3001;
 //
 
-console.log(PORT)
 const express = require("express");
 const router = require("./src/routes");
 const morgan = require("morgan");
@@ -36,8 +35,8 @@ module.exports = server;
 
 try {
 conn.sync({ force: false })  //cuando quiero hacer cambios tiene que estar en true 
-server.listen(PORT, () => {
-console.log(`Server listening on port ${PORT}`);  
+server.listen(port, () => {
+console.log(`Server listening on port ${port}`);  
 
 
 })

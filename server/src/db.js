@@ -4,10 +4,12 @@ const CountryModel = require("./models/Country");
 const ActivityModel = require("./models/Activity");
 const fs = require('fs'); //funciones para trabajar con el sistema de archivos
 const path = require('path'); //utilidades para manejar y transformar rutas de archivos
-const {DB_USER, DB_PASSWORD,DB_HOST,DB_NAME,DB_PORT} = process.env;
+const {DB_USER, DB_PASSWORD,DB_HOST,DB_NAME,DB_PORT,DB_DEPLOY} = process.env;
 
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
+const sequelize = new Sequelize(
+  DB_DEPLOY, 
+  {
   logging: false, 
   native: false, 
 });
