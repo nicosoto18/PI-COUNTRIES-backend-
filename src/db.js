@@ -7,13 +7,21 @@ const path = require('path'); //utilidades para manejar y transformar rutas de a
 const {DB_USER, DB_PASSWORD,DB_HOST,DB_NAME,DB_PORT,DATABASE_URL} = process.env;
 
 
+// const sequelize = new Sequelize(
+//    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+//   //  DATABASE_URL, 
+//   {
+//   logging: false, 
+//   native: false, 
+// });
+
 const sequelize = new Sequelize(
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
-  //  DATABASE_URL, 
-  {
-  logging: false, 
-  native: false, 
+   DATABASE_URL, 
+ {
+ logging: false, 
+ native: false, 
 });
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
