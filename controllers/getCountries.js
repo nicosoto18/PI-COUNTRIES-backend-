@@ -3,7 +3,7 @@
 
  const getCountries = async (req,res)=>{
      try {
-     const response = await axios.get("http://localhost:5000/countries")
+     const response = await axios.get("https://restcountries.com/v3.1/all")
      const dataPaises = response.data;
 
       for(const country of dataPaises){
