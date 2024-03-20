@@ -3,7 +3,7 @@ const {Activity,Country} = require("../src/db");
 const createActivities = async (req,res)=>{
 try {     
      const {Nombre, Dificultad, Duracion, Temporada, Paises} = req.body
-
+       console.log("hola")
      if(Nombre && Dificultad && Duracion && Temporada){
        
        const newActivity = await Activity.create({Nombre,Dificultad,Duracion,Temporada})      
