@@ -15,11 +15,10 @@ const {DB_USER, DB_PASSWORD,DB_HOST,DB_NAME,DB_PORT,DATABASE_URL} = process.env;
 //   native: false, 
 // });
 
-const sequelize = new Sequelize(
-   DATABASE_URL, 
- {
- logging: false, 
- native: false, 
+const sequelize = new Sequelize(DATABASE_URL, {
+  dialect: 'postgres', // Especifica el dialecto que estás utilizando
+  logging: false,
+  native: false,
 });
 
 const basename = path.basename(__filename);
