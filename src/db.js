@@ -5,7 +5,7 @@ const ActivityModel = require("./models/Activity");
 const fs = require('fs'); //funciones para trabajar con el sistema de archivos
 const path = require('path'); //utilidades para manejar y transformar rutas de archivos
 const {DB_USER, DB_PASSWORD,DB_HOST,DB_NAME,DB_PORT,DATABASE_URL} = process.env;
-
+const pg = require("pg")
 
 // const sequelize = new Sequelize(
 //    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
@@ -21,7 +21,8 @@ const sequelize = new Sequelize({
   password: DB_PASSWORD,
   host: DB_HOST,
   dialect: 'postgres',
-  port: DB_PORT
+  port: DB_PORT,
+  dialectModule: pg
 });
 //    DATABASE_URL, 
 //  {
@@ -59,5 +60,5 @@ Country.belongsToMany(Activity, {through: "Countries_activities"});
 module.exports = {
   Country, 
   Activity,
-  conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+  conn:sequelize,     // para importart la conexión { conn } = require('./db.js');
 };
