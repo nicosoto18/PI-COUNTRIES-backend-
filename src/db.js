@@ -5,7 +5,7 @@ const ActivityModel = require("./models/Activity");
 const fs = require('fs'); //funciones para trabajar con el sistema de archivos
 const path = require('path'); //utilidades para manejar y transformar rutas de archivos
 const {DB_USER, DB_PASSWORD,DB_HOST,DB_NAME,DB_PORT,DATABASE_URL} = process.env;
-const pg = require("pg")
+import pg from "pg"
 
 // const sequelize = new Sequelize(
 //    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
